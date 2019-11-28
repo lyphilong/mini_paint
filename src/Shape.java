@@ -2,6 +2,10 @@ import java.awt.*;
 
 public class Shape {
     Color color = Color.black;
+
+    public Shape(){
+	    System.out.println("Create Shape object");
+    }
     public static void draw() {
     }
     public static void fill() {
