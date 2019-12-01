@@ -1,1 +1,9 @@
+* Create 2 layers: one to draw, one to control
+	1: Draw panel 
+		To handle the the shape and draw 
+	2: ControlPanel
+		
 
+
+
+Panel is just a container to contain object and act to be child of a frame

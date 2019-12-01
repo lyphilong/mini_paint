@@ -10,6 +10,7 @@ public class draw {
 	public draw(){
 		Gui();
 	}
+
 	public static void main(String[] args) {
 		draw d = new draw();
 		System.out.println("hello");
@@ -18,7 +19,7 @@ public class draw {
 	private void Gui(){
 		mainFrame = new JFrame("Frame");	
 		mainFrame.setSize(600,500);
-		mainFrame.setLayout(new GridLayout(5,5));
+		mainFrame.setLayout(new GridLayout(1,2));
 		createPanel(1);
 		createPanel(2);
  	    	mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,9 +27,10 @@ public class draw {
 	}
 
 	private void createPanel(int x){
-		JPanel panel = new JPanel(new GridLayout(x,1));
+		JPanel panel = new JPanel();
 		mainFrame.add(panel);
 		JButton button = new JButton("button 1");
+		JButton button1 = new JButton("button 2");
 		button.addActionListener(new ActionListener(){
 			@Override
             		public void actionPerformed(ActionEvent arg0) {
@@ -36,6 +38,7 @@ public class draw {
 			}
 		});
 		panel.add(button);
+		panel.add(button1);
 
 	}
 
