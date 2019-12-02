@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
@@ -10,6 +11,33 @@ public class draw {
 	public draw(){
 		Gui();
 	}
+	
+
+	//The pop up menu when cliked right button of mouse
+	class PopUpDemo extends JPopupMenu {
+	    JMenuItem anItem;
+	    public PopUpDemo() {
+		anItem = new JMenuItem("Click Me!");
+		add(anItem);
+	    }
+	}
+
+	class PopClickListener extends MouseAdapter {
+	    public void mousePressed(MouseEvent e) {
+		if (e.isPopupTrigger())
+		    doPop(e);
+	    }
+
+	    public void mouseReleased(MouseEvent e) {
+		if (e.isPopupTrigger())
+		    doPop(e);
+	    }
+
+	    private void doPop(MouseEvent e) {
+		PopUpDemo menu = new PopUpDemo();
+		menu.show(e.getComponent(), e.getX(), e.getY());
+	    }
+	}
 
 	public static void main(String[] args) {
 		draw d = new draw();
@@ -19,9 +47,9 @@ public class draw {
 	private void Gui(){
 		mainFrame = new JFrame("Frame");	
 		mainFrame.setSize(600,500);
-		mainFrame.setLayout(new GridLayout(1,2));
-		createPanel(1);
-		createPanel(2);
+		mainFrame.setLayout(new BorderLayout());
+		mainFrame.addMouseListener(new PopClickListener());
+		mainFrame.add(new ControlPanel(), BorderLayout.WEST);
  	    	mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.setVisible(true);
 	}
@@ -41,6 +69,18 @@ public class draw {
 		panel.add(button1);
 
 	}
-
+	public class ControlPanel extends JPanel{
+		public ControlPanel(){
+			JLabel label = new JLabel("Control Panel");
+			this.add(label);
+			this.setBackground(Color.LIGHT_GRAY);
+			this.add(new JButton("b1"));
+			this.add(new JButton("b2"));
+			this.add(new JButton("b3"));
+			this.add(new JButton("b4"));
+			this.setAlignmentX(Component.CENTER_ALIGNMENT);
+			this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		}
+	}
 }
 
