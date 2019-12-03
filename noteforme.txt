@@ -1,9 +1,17 @@
 * Create 2 layers: one to draw, one to control
 	1: Draw panel 
 		To handle the the shape and draw 
+			resize the shape 
+			change color, position of shape
 	2: ControlPanel
 		
 
 
 
 Panel is just a container to contain object and act to be child of a frame
+
+
+
+* Create a texbox when right click.
+---->The null layout will cause some problem that I couldnt understand so try manager layout as much as possible.
+	Refer: https://stackoverflow.com/questions/766956/how-do-i-create-a-right-click-context-menu-in-java-swing 

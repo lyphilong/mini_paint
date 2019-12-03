@@ -15,6 +15,7 @@ public class draw {
 
 	//The pop up menu when cliked right button of mouse
 	class PopUpDemo extends JPopupMenu {
+	    //TODO: Need add spec in here
 	    JMenuItem anItem;
 	    public PopUpDemo() {
 		anItem = new JMenuItem("Click Me!");
@@ -70,16 +71,21 @@ public class draw {
 
 	}
 	public class ControlPanel extends JPanel{
+		//TODO: Control which will draw
 		public ControlPanel(){
-			JLabel label = new JLabel("Control Panel");
-			this.add(label);
-			this.setBackground(Color.LIGHT_GRAY);
-			this.add(new JButton("b1"));
-			this.add(new JButton("b2"));
-			this.add(new JButton("b3"));
-			this.add(new JButton("b4"));
-			this.setAlignmentX(Component.CENTER_ALIGNMENT);
-			this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		this.setLayout(new BorderLayout());
+		JPanel p = new JPanel();
+		JButton undo = new JButton("undo");
+		JButton clear= new JButton("clear");
+
+		//Set size of button
+		undo.setPreferredSize(new Dimension(140,140));	
+		clear.setPreferredSize(new Dimension(140,140));	
+		
+		p.add(undo);
+		p.add(clear);
+		p.setLayout(new BoxLayout(p, BoxLayout.PAGE_AXIS));
+		this.add(p, BorderLayout.CENTER);
 		}
 	}
 }
