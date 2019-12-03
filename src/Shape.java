@@ -1,18 +1,33 @@
+import javax.swing.*;
 import java.awt.*;
+import java.io.Serializable;
 
-public class Shape {
-    Color color = Color.black;
-    public static void draw() {
+
+public abstract class Shape extends JComponent implements Serializable {
+
+    protected Color fillColor;
+    protected boolean selected;
+
+    public Shape() {
     }
-    public static void fill() {
+
+    public void draw(Graphics var1) {}
+
+
+    public void setColor(Color filColor) {
+        this.fillColor = filColor;
     }
-    public static void resize() {
+
+    public Color getFillColor(){return this.fillColor;}
+
+    public void resize() {
     }
-    public static boolean check_is_pointing() {
-        return(true);
+
+    public boolean isSelected() {
+        return this.selected;
     }
-    public static void main(String[] args) {
-        Shape myObj = new Shape();
-        System.out.println(myObj.color);
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
+
 }
