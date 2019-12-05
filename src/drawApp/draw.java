@@ -99,8 +99,8 @@ public class draw {
 			height = 150;
 		}
 
-		public draw(Graphics2D g){
-			g2d.drawRect(150,150,150,150);
+		public void draw(Graphics2D g){
+			g.drawRect(150,150,150,150);
 		}
 	}
 
@@ -118,7 +118,8 @@ public class draw {
 		public void paintComponent(Graphics g){
 			super.paintComponent(g);
 			Graphics2D g2d = (Graphics2D) g.create();
-
+			Rect re = new Rect();
+			re.draw(g2d);
 			//g2d.drawRect(150,150,150,150);
 			g2d.dispose();
 		}
