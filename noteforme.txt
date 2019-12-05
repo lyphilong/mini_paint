@@ -4,14 +4,44 @@
 			resize the shape 
 			change color, position of shape
 	2: ControlPanel
-		
+		Need something to control draw many shape		
+
+
+
+
+
+
+
+
+
+
+*Knowledge:
+	+ Why use super.paintComponent?	
+	Suppose that JPanel is the canvas, Graphics object will be your paint brush so super... would be your eraser. So if there is no super..., your painbrush will draw things on top of old thing. And that wouldnt be nice.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 Panel is just a container to contain object and act to be child of a frame
 
 
-
+////////////////REFERENCE.//////////////////
 * Create a texbox when right click.
 ---->The null layout will cause some problem that I couldnt understand so try manager layout as much as possible.
 	Refer: https://stackoverflow.com/questions/766956/how-do-i-create-a-right-click-context-menu-in-java-swing 
