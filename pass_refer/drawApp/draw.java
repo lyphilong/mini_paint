@@ -106,6 +106,8 @@ public class draw {
 
 
 	public class DrawPanel extends JPanel{
+		Rectangle rect = new Rectangle(0,0,150,150);
+		Rectangle rect1 = new Rectangle(20,20,150,190);
 		public DrawPanel(){
 		}
 		@Override
@@ -118,9 +120,12 @@ public class draw {
 		public void paintComponent(Graphics g){
 			super.paintComponent(g);
 			Graphics2D g2d = (Graphics2D) g.create();
-			Rect re = new Rect();
-			re.draw(g2d);
-			//g2d.drawRect(150,150,150,150);
+			Area r1 = new Area(rect);
+			Area r2 = new Area([triangle 0,0 => 8,0 => 0,8]);
+			//g2d.draw(r2);
+			//g2d.draw(r1);
+			r1.subtract(r2);
+			g2d.draw(r1);
 			g2d.dispose();
 		}
 	}
