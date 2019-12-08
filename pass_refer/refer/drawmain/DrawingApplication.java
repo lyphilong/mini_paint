@@ -43,8 +43,8 @@ public class DrawingApplication extends JPanel implements MouseListener, MouseMo
 		panel.add(bottom, BorderLayout.SOUTH);
 		add(panel, BorderLayout.PAGE_START);
 		//Why?
-		addMouseListener((MouseListener) this);
-		addMouseMotionListener((MouseMotionListener) this);
+		//addMouseListener((MouseListener) this);
+		//addMouseMotionListener((MouseMotionListener) this);
 
 		clear.addActionListener(new ActionListener() {
 			@Override
@@ -157,7 +157,6 @@ public class DrawingApplication extends JPanel implements MouseListener, MouseMo
 		private final JCheckBox gradient, filled, dashed;
 		private final JTextField lineWidth, dashLength;
 		private final JLabel width, dash;
-		private JPanel panel;
 		private DrawPanel drawPanel;
 
 		public ControlPanel(DrawPanel panel) {
@@ -218,6 +217,8 @@ public class DrawingApplication extends JPanel implements MouseListener, MouseMo
 			MouseHandler mouseHandler = new MouseHandler();
 			drawPanel.addMouseListener(mouseHandler);
 			drawPanel.addMouseMotionListener(mouseHandler);
+			//JPanel newpanel1 = new JPanel();
+			//newpanel1.addMouseListener();
 		}
 
 		public int getDash() {
